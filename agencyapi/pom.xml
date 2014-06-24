@@ -9,7 +9,7 @@
    
    <!-- 配置版本资源信息 -->
 	<properties>
-		<war.file.name>agencyapi</war.file.name>
+		<war.file.name>wechat-mp-service</war.file.name>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<timestamp>20130830a</timestamp>
 		<spring.version>3.2.4.RELEASE</spring.version>
