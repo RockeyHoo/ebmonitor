@@ -3,6 +3,7 @@
 .classpath
 /target/
 
+/agencyapi/bin/
 /*/logs/
 /*/target/
 /*/.settings/
