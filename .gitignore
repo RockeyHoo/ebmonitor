@@ -4,13 +4,10 @@
 /target/
 
 /agencyapi/bin/
-/*/logs/
-/*/target/
-/*/.settings/
-/*/.project
-/*/.classpath
-
-
+/agencyapi/target/
+/agencyapi/.settings/
+/agencyapi/.project
+/agencyapi/.classpath
 
 
 *.jar
