@@ -3,11 +3,6 @@
 .classpath
 /target/
 
-/agencyapi/bin/
-/agencyapi/target/
-/agencyapi/.settings/
-/agencyapi/.project
-/agencyapi/.classpath
 
 /*/bin/
 /*/target/
