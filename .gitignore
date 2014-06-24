@@ -3,12 +3,12 @@
 .classpath
 /target/
 
-*/logs/
-*/target/
-*/.settings/
-*/.project
-*/.classpath
-*/.springBeans
+/*/logs/
+/*/target/
+/*/.settings/
+/*/.project
+/*/.classpath
+
 
 
 
