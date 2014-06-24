@@ -1,9 +1,16 @@
-.classpath
+/.settings/
 .project
-.settings/
-target/
+.classpath
+/target/
 
-/*/.settings
+*/logs/
+*/target/
+*/.settings/
+*/.project
+*/.classpath
+*/.springBeans
+
+
 
 *.jar
 *.class
