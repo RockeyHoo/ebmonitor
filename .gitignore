@@ -2,3 +2,9 @@
 .project
 .settings/
 target/
+
+*/.settings
+
+*.jar
+*.class
+*.war
