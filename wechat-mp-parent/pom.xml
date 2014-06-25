@@ -1,18 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
-    <groupId>com.github.usc</groupId>
+    <groupId>com.github.rockeyhoo</groupId>
     <artifactId>wechat-mp-pom</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>wechat-mp-pom</name>
-    <url>https://github.com/usc/wechat-mp-sdk</url>
+    <url>https://github.com/RockeyHoo/ebmonitor</url>
 
+	<name>wechat mp parent pom</name>
+	<description>wechat mp </description>
+	<url>http://rockeyhoo.github.com/ebmonitor</url>
+	
     <licenses>
         <license>
             <name>Apache License,Version 2.0</name>
@@ -21,49 +20,199 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/usc/wechat-mp-sdk.git</connection>
-        <developerConnection>scm:git:git@github.com:usc/wechat-mp-sdk.git</developerConnection>
-        <url>https://github.com/usc/wechat-mp-sdk</url>
+        <connection>scm:git:git://github.com/rockeyhoo/ebmonitor.git</connection>
+        <developerConnection>scm:git:git@github.com:rockeyhoo/ebmonitor.git</developerConnection>
+        <url>https://github.com/RockeyHoo/ebmonitor.git</url>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/usc/wechat-mp-sdk/issues</url>
+        <url>https://github.com/RockeyHoo/ebmonitor/issues</url>
+        <system>github</system>
     </issueManagement>
 
     <developers>
         <developer>
-            <name>Li Shunli</name>
-            <id>ShunLi</id>
-            <url>http://weibo.com/lishunli</url>
-            <email>lishunli.me@gmail.com</email>
+            <name>RockeyHoo</name>
+            <id>RockeyHoo</id>
+            <url>http://blog.csdn.com/rockeyhoo</url>
+            <email>rockeyhoo@163.com</email>
             <organization>USC</organization>
-            <organizationUrl>https://github.com/usc</organizationUrl>
+            <organizationUrl>https://github.com/rockeyhoo</organizationUrl>
             <timezone>+8</timezone>
-            <roles>
-                <role>Owner</role>
-            </roles>
         </developer>
     </developers>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
+    <properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<junit.version>4.11</junit.version>>
+    	<slf4j.version>1.7.6</slf4j.version>
+    	<log4j.version>1.2.17</log4j.version>
+    	<common-lang3.version>3.2.1</common-lang3.version>
+    	<commons-beanutils.version>1.9.1</commons-beanutils.version>
+    	<commons-io.version>2.4</commons-io.version>
+    	<guava.version>16.0.1</guava.version>
+    	<fastjson.version>1.1.39</fastjson.version>
+    	<servlet.version>3.1-b07</servlet.version>
+    	<httpcomponents.version>4.3.2</httpcomponents.version>
+    	<jetty.version>8.1.15.v20140411</jetty.version>
+    </properties>
+    
+    <!-- ============================================================== -->
+    <!-- 依赖管理 -->
+    <!-- ============================================================== -->
+	<dependencyManagement>
+		<dependencies>
+		    <dependency>
+	            <groupId>com.github.rockeyhoo</groupId>
+	            <artifactId>wechat-mp-sdk</artifactId>
+	            <version>1.0.1-SNAPSHOT</version>
+	        </dependency>
+			<!-- log4j -->
+	        <dependency>
+	            <groupId>junit</groupId>
+	            <artifactId>junit</artifactId>
+	            <version>${junit.version}</version>
+	            <scope>test</scope>
+	        </dependency>
+	        
+	        <!-- -----------------------log start ----------------------->
+			<!-- slf4j -->
+	        <dependency>
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>slf4j-api</artifactId>
+	            <version>${slf4j.version}</version>
+	        </dependency>
+	        
+	        <dependency>
+	            <groupId>org.slf4j</groupId>
+	            <artifactId>slf4j-log4j12</artifactId>
+	            <version>${slf4j.version}</version>
+	        </dependency>
+	        
+	        <dependency>
+	            <groupId>log4j</groupId>
+	            <artifactId>log4j</artifactId>
+	            <version>${log4j.version}</version>
+	        </dependency>
+	        <!-- -----------------------log end ----------------------->
+			
+			<!-- ----------------------common start---------------- -->
+	        <dependency>
+	            <groupId>org.apache.commons</groupId>
+	            <artifactId>commons-lang3</artifactId>
+	            <version>${common-lang3.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>commons-beanutils</groupId>
+	            <artifactId>commons-beanutils</artifactId>
+	            <version>${commons-beanutils.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>commons-io</groupId>
+	            <artifactId>commons-io</artifactId>
+	            <version>${commons-io.version}</version>
+	        </dependency>
+			<!-- ------------------------common end --------------------->
+			
+			<!-- google guava listUtils -->
+	        <dependency>
+	            <groupId>com.google.guava</groupId>
+	            <artifactId>guava</artifactId>
+	            <version>${guava.version}</version>
+	        </dependency>
+	
+			<!-- fastjson -->
+	        <dependency>
+	            <groupId>com.alibaba</groupId>
+	            <artifactId>fastjson</artifactId>
+	            <version>${fastjson.version}</version>
+	        </dependency>
+			
+			<!-- =================httpcomponents========================  -->
+	        <dependency>
+	            <groupId>org.apache.httpcomponents</groupId>
+	            <artifactId>fluent-hc</artifactId>
+	            <version>${httpcomponents.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.apache.httpcomponents</groupId>
+	            <artifactId>httpmime</artifactId>
+	            <version>${httpcomponents.version}</version>
+	        </dependency>		
+			<!-- =================httpcomponents========================  -->
+			
+			<dependency>
+	            <groupId>javax.servlet</groupId>
+	            <artifactId>javax.servlet-api</artifactId>
+	            <version>${servlet.version}</version>
+	        </dependency>
+	   </dependencies>
+	</dependencyManagement>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
+	<!-- ============================================================= -->
+	<!-- 插件配置 -->
+	<!-- ============================================================= -->
+	<build>
+		<pluginManagement>
+			<plugins>	
+				<!-- compiler插件, 设定JDK版本 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				
+				<!-- release相关插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.4.2</version>
+				</plugin>
+				
+				<!-- jetty -->
+				 <plugin>
+	                <groupId>org.mortbay.jetty</groupId>
+	                <artifactId>jetty-maven-plugin</artifactId>
+	                <version>${jetty.version}</version>
+	            </plugin>
+				
+				<!-- goals: eclipse:eclipse 生成Eclipse项目结构
+							eclipse:myeclipse 生成Myeclipse项目结构
+							eclipse:m2eclipse 生成M2eclipse插件+eclipse(2.7以后去掉了过该goals)
+				 -->
+				<plugin>
+					  <groupId>org.apache.maven.plugins</groupId>
+					  <artifactId>maven-eclipse-plugin</artifactId>
+					  <version>2.9</version>
+					  <configuration>
+						  <buildcommands> <!-- List of eclipse build commands. -->
+							   <buildcommand>org.eclipse.wst.common.project.facet.core.builder</buildcommand>
+							   <buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+							   <buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
+						  </buildcommands>
+						  <projectnatures><!-- List of eclipse project natures.  -->
+							   <projectnature>org.eclipse.jdt.core.javanature</projectnature>
+							   <projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
+							   <projectnature>org.eclipse.wst.common.project.facet.core.nature</projectnature>
+							   <!--
+								  <nature>com.genuitec.eclipse.ast.deploy.core.deploymentnature</nature>
+								  <nature>com.genuitec.eclipse.j2eedt.core.webnature</nature>
+								 -->
+						  </projectnatures>
+					  </configuration>
+				  </plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<!-- ============================================================= -->
+	<!-- profile配置 -->
+	<!-- ============================================================= -->	
     <profiles>
         <profile>
             <id>release-sign-artifacts</id>
@@ -106,7 +255,7 @@
                             </execution>
                         </executions>
                     </plugin>
-
+					<!-- 给构建加密 -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -126,8 +275,4 @@
         </profile>
     </profiles>
 
-    <modules>
-        <module>wechat-mp-sdk</module>
-        <module>wechat-mp-web</module>
-    </modules>
 </project>

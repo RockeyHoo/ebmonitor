@@ -1,18 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
-    <groupId>com.github.usc</groupId>
+    <groupId>com.github.rockeyhoo</groupId>
     <artifactId>wechat-mp-pom</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>wechat-mp-pom</name>
-    <url>https://github.com/usc/wechat-mp-sdk</url>
+    <url>https://github.com/RockeyHoo/ebmonitor</url>
 
+	<description>wechat mp </description>
+	<url>http://rockeyhoo.github.com/ebmonitor</url>
+	
     <licenses>
         <license>
             <name>Apache License,Version 2.0</name>
@@ -21,30 +19,36 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/usc/wechat-mp-sdk.git</connection>
-        <developerConnection>scm:git:git@github.com:usc/wechat-mp-sdk.git</developerConnection>
-        <url>https://github.com/usc/wechat-mp-sdk</url>
+        <connection>scm:git:git://github.com/rockeyhoo/ebmonitor.git</connection>
+        <developerConnection>scm:git:git@github.com:rockeyhoo/ebmonitor.git</developerConnection>
+        <url>https://github.com/RockeyHoo/ebmonitor.git</url>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/usc/wechat-mp-sdk/issues</url>
+        <url>https://github.com/RockeyHoo/ebmonitor/issues</url>
+        <system>github</system>
     </issueManagement>
 
     <developers>
         <developer>
-            <name>Li Shunli</name>
-            <id>ShunLi</id>
-            <url>http://weibo.com/lishunli</url>
-            <email>lishunli.me@gmail.com</email>
+            <name>RockeyHoo</name>
+            <id>RockeyHoo</id>
+            <url>http://blog.csdn.com/rockeyhoo</url>
+            <email>rockeyhoo@163.com</email>
             <organization>USC</organization>
-            <organizationUrl>https://github.com/usc</organizationUrl>
+            <organizationUrl>https://github.com/rockeyhoo</organizationUrl>
             <timezone>+8</timezone>
-            <roles>
-                <role>Owner</role>
-            </roles>
         </developer>
     </developers>
 
+    <properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <modules>
+        <module>wechat-mp-sdk</module>
+        <module>wechat-mp-web</module>
+    </modules>
     <build>
         <plugins>
             <plugin>
@@ -106,7 +110,7 @@
                             </execution>
                         </executions>
                     </plugin>
-
+					<!-- 给构建加密 -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -126,8 +130,4 @@
         </profile>
     </profiles>
 
-    <modules>
-        <module>wechat-mp-sdk</module>
-        <module>wechat-mp-web</module>
-    </modules>
 </project>
