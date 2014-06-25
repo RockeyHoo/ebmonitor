@@ -8,9 +8,6 @@
     <name>wechat-mp-pom</name>
     <url>https://github.com/RockeyHoo/ebmonitor</url>
 
-	<description>wechat mp </description>
-	<url>http://rockeyhoo.github.com/ebmonitor</url>
-	
     <licenses>
         <license>
             <name>Apache License,Version 2.0</name>

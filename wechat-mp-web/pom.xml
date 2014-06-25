@@ -7,9 +7,7 @@
 	    <version>1.0.1-SNAPSHOT</version>
 	    <relativePath>../wechat-mp-parent/</relativePath>
     </parent>
-    <groupId>com.github.rockeyhoo</groupId>
     <artifactId>wechat-mp-web</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>wechat-mp-web</name>
 

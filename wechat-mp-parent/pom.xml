@@ -8,10 +8,6 @@
     <name>wechat-mp-pom</name>
     <url>https://github.com/RockeyHoo/ebmonitor</url>
 
-	<name>wechat mp parent pom</name>
-	<description>wechat mp </description>
-	<url>http://rockeyhoo.github.com/ebmonitor</url>
-	
     <licenses>
         <license>
             <name>Apache License,Version 2.0</name>
@@ -44,7 +40,7 @@
 
     <properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    	<junit.version>4.11</junit.version>>
+    	<junit.version>4.11</junit.version>
     	<slf4j.version>1.7.6</slf4j.version>
     	<log4j.version>1.2.17</log4j.version>
     	<common-lang3.version>3.2.1</common-lang3.version>
@@ -67,6 +63,7 @@
 	            <artifactId>wechat-mp-sdk</artifactId>
 	            <version>1.0.1-SNAPSHOT</version>
 	        </dependency>
+	        
 			<!-- log4j -->
 	        <dependency>
 	            <groupId>junit</groupId>
@@ -75,7 +72,7 @@
 	            <scope>test</scope>
 	        </dependency>
 	        
-	        <!-- -----------------------log start ----------------------->
+	        <!-- ========================log start ======================= -->
 			<!-- slf4j -->
 	        <dependency>
 	            <groupId>org.slf4j</groupId>
@@ -94,9 +91,9 @@
 	            <artifactId>log4j</artifactId>
 	            <version>${log4j.version}</version>
 	        </dependency>
-	        <!-- -----------------------log end ----------------------->
+	        <!-- ===========================log end ================================ -->
 			
-			<!-- ----------------------common start---------------- -->
+			<!-- ===========================common start============================ -->
 	        <dependency>
 	            <groupId>org.apache.commons</groupId>
 	            <artifactId>commons-lang3</artifactId>
@@ -112,7 +109,7 @@
 	            <artifactId>commons-io</artifactId>
 	            <version>${commons-io.version}</version>
 	        </dependency>
-			<!-- ------------------------common end --------------------->
+			<!-- ==========================common end ==================================== -->
 			
 			<!-- google guava listUtils -->
 	        <dependency>
