@@ -8,6 +8,11 @@
     <name>wechat-mp-pom</name>
     <url>https://github.com/RockeyHoo/ebmonitor</url>
 
+    <modules>
+        <module>wechat-mp-sdk</module>
+        <module>wechat-mp-web</module>
+    </modules>
+
     <licenses>
         <license>
             <name>Apache License,Version 2.0</name>
@@ -42,10 +47,6 @@
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
-    <modules>
-        <module>wechat-mp-sdk</module>
-        <module>wechat-mp-web</module>
-    </modules>
     <build>
         <plugins>
             <plugin>

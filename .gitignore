@@ -3,6 +3,12 @@
 .classpath
 /target/
 readme
+*.iml
+/.settings
+*.iml
+target
+/.idea
+*.DS_Store
 
 
 /*/bin/
