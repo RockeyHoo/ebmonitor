@@ -177,32 +177,6 @@
 	                <artifactId>jetty-maven-plugin</artifactId>
 	                <version>${jetty.version}</version>
 	            </plugin>
-				
-				<!-- goals: eclipse:eclipse 生成Eclipse项目结构
-							eclipse:myeclipse 生成Myeclipse项目结构
-							eclipse:m2eclipse 生成M2eclipse插件+eclipse(2.7以后去掉了过该goals)
-				 -->
-				<plugin>
-					  <groupId>org.apache.maven.plugins</groupId>
-					  <artifactId>maven-eclipse-plugin</artifactId>
-					  <version>2.9</version>
-					  <configuration>
-						  <buildcommands> <!-- List of eclipse build commands. -->
-							   <buildcommand>org.eclipse.wst.common.project.facet.core.builder</buildcommand>
-							   <buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
-							   <buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
-						  </buildcommands>
-						  <projectnatures><!-- List of eclipse project natures.  -->
-							   <projectnature>org.eclipse.jdt.core.javanature</projectnature>
-							   <projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
-							   <projectnature>org.eclipse.wst.common.project.facet.core.nature</projectnature>
-							   <!--
-								  <nature>com.genuitec.eclipse.ast.deploy.core.deploymentnature</nature>
-								  <nature>com.genuitec.eclipse.j2eedt.core.webnature</nature>
-								 -->
-						  </projectnatures>
-					  </configuration>
-				  </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>

@@ -1,17 +1,12 @@
 package org.usc.wechat.mp.web.util;
 
+import org.apache.commons.io.IOUtils;
+
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.io.IOUtils;
-
-/**
- * @author Shunli
- *
- */
 public class WebUtil {
     public static final String DEFAULT_ENCODING = "UTF-8";
 

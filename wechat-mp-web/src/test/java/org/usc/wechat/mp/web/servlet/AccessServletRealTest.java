@@ -1,8 +1,5 @@
 package org.usc.wechat.mp.web.servlet;
 
-import java.io.File;
-import java.net.URI;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.http.Consts;
@@ -10,10 +7,9 @@ import org.apache.http.client.fluent.Request;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 
-/**
- *
- * @author Shunli
- */
+import java.io.File;
+import java.net.URI;
+
 public class AccessServletRealTest {
     public static void main(String[] args) throws Exception {
         testGet();
