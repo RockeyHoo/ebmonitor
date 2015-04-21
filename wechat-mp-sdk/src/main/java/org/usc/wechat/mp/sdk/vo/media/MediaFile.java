@@ -6,7 +6,7 @@ import org.usc.wechat.mp.sdk.vo.AbstractToStringBuilder;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class MediaFile extends AbstractToStringBuilder {
     private MediaType mediaType;

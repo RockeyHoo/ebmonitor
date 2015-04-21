@@ -6,7 +6,7 @@ import com.google.common.base.Objects;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class License extends AbstractToStringBuilder{
     private String app;

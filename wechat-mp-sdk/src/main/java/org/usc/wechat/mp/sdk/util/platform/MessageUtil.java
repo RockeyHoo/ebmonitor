@@ -17,7 +17,7 @@ import org.usc.wechat.mp.sdk.vo.token.License;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class MessageUtil {
     public static JsonRtn sendCustomMessage(License license, CustomMessage customMessage) {

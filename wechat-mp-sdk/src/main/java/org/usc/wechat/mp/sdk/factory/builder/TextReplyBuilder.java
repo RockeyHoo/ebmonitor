@@ -9,7 +9,7 @@ import org.usc.wechat.mp.sdk.vo.message.reply.TextReply;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class TextReplyBuilder implements ReplyBuilder {
     @Override

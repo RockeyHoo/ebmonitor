@@ -15,7 +15,7 @@ import org.usc.wechat.mp.sdk.vo.token.License;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class GroupUtil {
     public static GroupsJsonRtn getGroups(License license) {
@@ -38,7 +38,7 @@ public class GroupUtil {
         return HttpUtil.postBodyRequest(WechatRequest.CREATE_GROUP, license, new GroupWarpper(new Group(groupName)), GroupJsonRtn.class);
     }
 
-    // TODO-Shunli: now update group always failed, tip system error, check later
+    // TODO-RockeyHoo: now update group always failed, tip system error, check later
     public static JsonRtn updateGroup(License license, Group group) {
         if (group == null) {
             return null;

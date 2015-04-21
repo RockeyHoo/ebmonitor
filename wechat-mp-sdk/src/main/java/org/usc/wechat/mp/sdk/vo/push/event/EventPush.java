@@ -9,7 +9,7 @@ import org.usc.wechat.mp.sdk.vo.push.Push;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 @XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)

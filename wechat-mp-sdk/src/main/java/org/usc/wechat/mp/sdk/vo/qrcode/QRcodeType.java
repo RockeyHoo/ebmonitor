@@ -2,7 +2,7 @@ package org.usc.wechat.mp.sdk.vo.qrcode;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum QRcodeType {
     TEMPORARY("QR_SCENE"),

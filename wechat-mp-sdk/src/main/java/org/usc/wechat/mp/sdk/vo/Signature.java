@@ -3,7 +3,7 @@ package org.usc.wechat.mp.sdk.vo;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class Signature extends AbstractToStringBuilder{
     private String token;

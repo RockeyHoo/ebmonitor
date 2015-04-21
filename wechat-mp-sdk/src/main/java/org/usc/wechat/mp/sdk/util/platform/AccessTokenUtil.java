@@ -23,7 +23,7 @@ import com.google.common.primitives.Ints;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class AccessTokenUtil {
     private final static Logger log = LoggerFactory.getLogger(AccessTokenUtil.class);

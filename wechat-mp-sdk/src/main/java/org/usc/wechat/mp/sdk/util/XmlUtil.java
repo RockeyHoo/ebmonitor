@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
 /**
  * xml <-> object
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class XmlUtil {
     private static List<Class<?>> getAllSuperTypes(Class<?> type) {

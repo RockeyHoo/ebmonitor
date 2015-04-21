@@ -10,7 +10,7 @@ import org.usc.wechat.mp.sdk.vo.message.reply.detail.NewsDetail;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class NewsReplyBuilder implements ReplyBuilder {
     @Override

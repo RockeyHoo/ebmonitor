@@ -4,7 +4,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class QRcodeTicket {
     @JSONField(name = "action_name")

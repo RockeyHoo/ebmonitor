@@ -7,7 +7,7 @@ import org.usc.wechat.mp.sdk.vo.message.reply.Reply;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public interface ReplyBuilder {
     Reply buildReply(List<ReplyDetail> replyDetails);

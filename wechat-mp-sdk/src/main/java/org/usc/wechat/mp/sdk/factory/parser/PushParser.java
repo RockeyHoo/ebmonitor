@@ -5,7 +5,7 @@ import org.usc.wechat.mp.sdk.vo.push.Push;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public interface PushParser {
     Reply parse(Push push);

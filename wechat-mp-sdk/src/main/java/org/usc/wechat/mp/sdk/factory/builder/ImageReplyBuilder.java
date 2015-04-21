@@ -1,15 +1,15 @@
 package org.usc.wechat.mp.sdk.factory.builder;
 
-import java.util.List;
-
 import org.usc.wechat.mp.sdk.vo.ReplyDetail;
 import org.usc.wechat.mp.sdk.vo.message.reply.ImageReply;
 import org.usc.wechat.mp.sdk.vo.message.reply.Reply;
 import org.usc.wechat.mp.sdk.vo.message.reply.detail.MediaDetail;
 
+import java.util.List;
+
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class ImageReplyBuilder implements ReplyBuilder {
     @Override

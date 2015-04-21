@@ -10,7 +10,7 @@ import org.usc.wechat.mp.sdk.vo.message.reply.detail.VideoDetail;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 @XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)

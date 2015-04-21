@@ -5,7 +5,7 @@ import org.usc.wechat.mp.sdk.vo.token.License;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class AccessTokenUtilTest {
     public static void main(String[] args) {

@@ -3,7 +3,7 @@ package org.usc.wechat.mp.sdk.vo.message.custom;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum CustomMessageType {
     TEXT("text"),

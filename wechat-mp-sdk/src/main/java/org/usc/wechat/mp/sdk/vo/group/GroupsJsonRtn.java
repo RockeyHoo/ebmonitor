@@ -6,7 +6,7 @@ import org.usc.wechat.mp.sdk.vo.JsonRtn;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class GroupsJsonRtn extends JsonRtn {
     private List<Group> groups;

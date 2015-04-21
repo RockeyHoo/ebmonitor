@@ -2,7 +2,7 @@ package org.usc.wechat.mp.sdk.vo;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class ReplyDetail {
     private String title;

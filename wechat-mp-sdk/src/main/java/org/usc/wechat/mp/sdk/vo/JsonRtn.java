@@ -4,7 +4,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class JsonRtn extends AbstractToStringBuilder{
     @JSONField(name = "errcode")

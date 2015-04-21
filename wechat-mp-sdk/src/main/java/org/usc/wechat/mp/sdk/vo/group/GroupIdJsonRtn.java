@@ -4,7 +4,7 @@ import org.usc.wechat.mp.sdk.vo.JsonRtn;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class GroupIdJsonRtn extends JsonRtn {
     private int groupId;

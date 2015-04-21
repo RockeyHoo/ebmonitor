@@ -9,7 +9,7 @@ import org.usc.wechat.mp.sdk.factory.PushEnumFactory;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class PushTest {
 

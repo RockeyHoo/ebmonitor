@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class ReplyDetailWarpper {
     private String replyType;

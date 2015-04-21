@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class JsonRtnUtil {
     private static final String WECHAT_GLOBAL_MESSAGE_FILE_NAME = "wechate-global-message";

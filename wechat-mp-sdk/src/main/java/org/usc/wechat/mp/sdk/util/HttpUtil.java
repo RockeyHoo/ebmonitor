@@ -34,7 +34,7 @@ import com.google.common.collect.Lists;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class HttpUtil {
     private final static Logger log = LoggerFactory.getLogger(HttpUtil.class);

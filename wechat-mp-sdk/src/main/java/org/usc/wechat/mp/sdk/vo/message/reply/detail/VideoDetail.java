@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class VideoDetail extends MediaDetail {

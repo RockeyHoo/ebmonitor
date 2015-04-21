@@ -9,7 +9,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class Menu extends AbstractToStringBuilder {
     @JSONField(name = "button")

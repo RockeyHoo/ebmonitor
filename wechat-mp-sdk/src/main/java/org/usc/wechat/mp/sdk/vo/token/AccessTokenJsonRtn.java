@@ -7,7 +7,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class AccessTokenJsonRtn extends JsonRtn {
     @JSONField(name = "access_token")

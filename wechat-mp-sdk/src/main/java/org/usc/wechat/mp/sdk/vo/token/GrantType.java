@@ -2,7 +2,7 @@ package org.usc.wechat.mp.sdk.vo.token;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum GrantType {
     CLIENT_CREDENTIAL("client_credential");

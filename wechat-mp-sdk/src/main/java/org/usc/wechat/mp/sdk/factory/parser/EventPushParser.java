@@ -11,7 +11,7 @@ import org.usc.wechat.mp.sdk.vo.push.event.EventPush;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class EventPushParser implements PushParser {
     @Override

@@ -13,7 +13,7 @@ import com.google.common.collect.ImmutableMap;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class BizUtil {
 	/**

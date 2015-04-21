@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public abstract class AbstractToStringBuilder {
     @Override

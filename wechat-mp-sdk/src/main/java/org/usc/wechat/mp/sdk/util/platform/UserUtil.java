@@ -14,7 +14,7 @@ import com.google.common.collect.ImmutableMap;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class UserUtil {
     public static UserInfoJsonRtn getUserInfo(License license, String openId) {

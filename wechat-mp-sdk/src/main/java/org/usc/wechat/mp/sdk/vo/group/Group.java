@@ -4,7 +4,7 @@ import org.usc.wechat.mp.sdk.vo.AbstractToStringBuilder;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class Group extends AbstractToStringBuilder {
     private int id;

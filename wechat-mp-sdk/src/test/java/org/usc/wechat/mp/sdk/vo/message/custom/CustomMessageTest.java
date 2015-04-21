@@ -22,7 +22,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class CustomMessageTest {
     public static void main(String[] args) {

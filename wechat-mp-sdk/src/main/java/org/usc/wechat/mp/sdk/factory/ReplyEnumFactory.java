@@ -14,7 +14,7 @@ import org.usc.wechat.mp.sdk.vo.message.reply.Reply;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum ReplyEnumFactory {
     TEXT("text", new TextReplyBuilder()),

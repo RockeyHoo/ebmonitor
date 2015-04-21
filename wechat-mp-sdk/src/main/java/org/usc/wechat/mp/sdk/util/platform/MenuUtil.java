@@ -23,7 +23,7 @@ import com.alibaba.fastjson.JSONObject;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class MenuUtil {
     private final static Logger log = LoggerFactory.getLogger(MenuUtil.class);

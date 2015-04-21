@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class MediaLimit {
     private long maxSize;

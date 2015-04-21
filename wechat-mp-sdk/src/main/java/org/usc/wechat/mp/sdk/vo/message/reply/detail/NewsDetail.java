@@ -8,7 +8,7 @@ import org.usc.wechat.mp.sdk.vo.AbstractToStringBuilder;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class NewsDetail extends AbstractToStringBuilder {

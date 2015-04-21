@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum WechatRequest {
     GET_ACCESS_TOKEN("https://api.weixin.qq.com/cgi-bin/token"),

@@ -8,7 +8,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class ArticlesCustomMessageDetail extends AbstractToStringBuilder {
     @JSONField(name = "articles")

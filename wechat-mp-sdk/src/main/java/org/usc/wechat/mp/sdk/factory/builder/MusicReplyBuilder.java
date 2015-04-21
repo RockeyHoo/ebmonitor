@@ -9,7 +9,7 @@ import org.usc.wechat.mp.sdk.vo.message.reply.detail.MusicDetail;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class MusicReplyBuilder implements ReplyBuilder {
     @Override

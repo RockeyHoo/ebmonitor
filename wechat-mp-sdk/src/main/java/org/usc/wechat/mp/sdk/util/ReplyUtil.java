@@ -16,7 +16,7 @@ import org.usc.wechat.mp.sdk.vo.token.License;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class ReplyUtil {
     public static Reply buildReply(Reply reply, Push push) {

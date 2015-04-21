@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum MimeType {
     IMAGE_JPG("jpg", "image/jpeg"),

@@ -7,7 +7,7 @@ import org.usc.wechat.mp.sdk.vo.push.event.NormalEventPush;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum EventPushType {
     SUBSCRIBE("subscribe", NormalEventPush.class),

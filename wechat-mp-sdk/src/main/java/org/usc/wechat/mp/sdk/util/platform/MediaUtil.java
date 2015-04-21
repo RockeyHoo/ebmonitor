@@ -34,12 +34,12 @@ import org.usc.wechat.mp.sdk.vo.token.License;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class MediaUtil {
     private final static Logger log = LoggerFactory.getLogger(MediaUtil.class);
 
-    // TODO-Shunli: now upload video always failed, tip system error, check later
+    // TODO-RockeyHoo: now upload video always failed, tip system error, check later
     public static MediaJsonRtn uploadMedia(License license, MediaFile mediaFile) {
         if (mediaFile == null) {
             return null;

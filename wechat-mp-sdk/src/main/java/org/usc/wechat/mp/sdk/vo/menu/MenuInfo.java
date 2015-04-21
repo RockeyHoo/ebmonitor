@@ -6,7 +6,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public abstract class MenuInfo  extends AbstractToStringBuilder{
     @JSONField(name = "name")

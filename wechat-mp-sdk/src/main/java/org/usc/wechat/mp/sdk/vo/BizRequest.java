@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum BizRequest {
     SEND_BIZ_MSG("http://42.121.16.232:9003/agencyapi/wechat/sendMsg.service");

@@ -2,7 +2,7 @@ package org.usc.wechat.mp.sdk.vo.menu;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public enum MenuType {
     CLICK("click") {

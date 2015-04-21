@@ -6,7 +6,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class MediaCustomMessageDetail extends AbstractToStringBuilder {
     @JSONField(name = "media_id")

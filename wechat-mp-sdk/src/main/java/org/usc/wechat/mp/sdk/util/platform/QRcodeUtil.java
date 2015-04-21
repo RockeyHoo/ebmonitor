@@ -19,7 +19,7 @@ import com.google.common.primitives.Ints;
 
 /**
  *
- * @author Shunli
+ * @author RockeyHoo
  */
 public class QRcodeUtil {
     private final static Logger log = LoggerFactory.getLogger(QRcodeUtil.class);
