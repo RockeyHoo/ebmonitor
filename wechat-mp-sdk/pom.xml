@@ -5,12 +5,12 @@
 	    <groupId>com.github.rockeyhoo</groupId>
 	    <artifactId>wechat-mp-pom</artifactId>
 	    <version>1.0.1-SNAPSHOT</version>
-	    <relativePath>../wechat-mp-parent/</relativePath>
     </parent>
     
     <artifactId>wechat-mp-sdk</artifactId>
     <packaging>jar</packaging>
     <name>wechat-mp-sdk</name>
+    <version>1.0.1-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
