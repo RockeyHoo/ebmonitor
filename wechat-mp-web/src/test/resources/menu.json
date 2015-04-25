@@ -1,0 +1,79 @@
+{
+    "button": [
+        {
+            "name": "CAT监控",
+            "sub_button": [
+                {
+                    "type": "click",
+                    "name": "业务大盘",
+                    "key": "SUB_CAT_METRIC"
+                },
+                {
+                    "type": "click",
+                    "name": "Transaction",
+                    "key": "SUB_CAT_TRANSACTION"
+                },
+                {
+                    "type": "click",
+                    "name": "Event",
+                    "key": "SUB_CAT_EVENT"
+                }
+            ]
+        },
+        {
+            "name": "我的订阅",
+            "sub_button": [
+                {
+                    "type": "click",
+                    "name": "我的应用",
+                    "key": "SUB_MY_APPS"
+                },
+                {
+                    "type": "click",
+                    "name": "我的报表",
+                    "key": "SUB_MY_REPORTS"
+                },
+                {
+                    "type": "view",
+                    "name": "我的北斗",
+                    "url": "https://beidou.dper.com/login/welcome"
+                },
+                {
+                    "type": "click",
+                    "name": "如何订阅",
+                    "key": "SUB_HOW_TO_SUBSCRIBE"
+                }
+            ]
+        },
+        {
+            "name": "自助服务",
+            "sub_button": [
+                {
+                    "type": "click",
+                    "name": "找同事",
+                    "key": "SUB_EMPLOYEE_FIND"
+                },
+                {
+                    "type": "click",
+                    "name": "常用信息",
+                    "key": "SUB_COMMON_INFO"
+                },
+                {
+                    "type": "click",
+                    "name": "连线客服",
+                    "key": "SUB_CUSTOMER_SERVICE"
+                },
+                {
+                    "type": "click",
+                    "name": "我的信息",
+                    "key": "SUB_PERSONAL_INFO"
+                },
+                {
+                    "type": "click",
+                    "name": "帮助改进",
+                    "key": "SUB_HELP"
+                }
+            ]
+        }
+    ]
+}

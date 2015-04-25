@@ -1,11 +1,11 @@
 package org.rockey.wechat.mp.sdk.vo.push;
 
-import java.io.File;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.rockey.wechat.mp.sdk.factory.PushEnumFactory;
+
+import java.io.File;
 
 /**
  *

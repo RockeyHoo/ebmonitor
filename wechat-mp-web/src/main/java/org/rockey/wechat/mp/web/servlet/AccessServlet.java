@@ -6,17 +6,16 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
-import org.rockey.wechat.mp.web.util.WebUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.rockey.wechat.mp.sdk.factory.PushEnumFactory;
 import org.rockey.wechat.mp.sdk.util.XmlUtil;
 import org.rockey.wechat.mp.sdk.vo.Signature;
 import org.rockey.wechat.mp.sdk.vo.message.reply.Reply;
 import org.rockey.wechat.mp.sdk.vo.push.Push;
+import org.rockey.wechat.mp.web.util.WebUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/access")
 public class AccessServlet extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
@@ -40,6 +38,7 @@ public class AccessServlet extends HttpServlet
     {
         try
         {
+            System.out.println("begin .........");
             Signature signature = new Signature();
             boolean hasRights = checkSignature(signature, request);
             if (hasRights)
@@ -63,6 +62,7 @@ public class AccessServlet extends HttpServlet
     {
         try
         {
+            System.out.println("...........");
             log.info("========= post begin ===========");
             log.info("--							");
             log.info("========= post begin ===========");

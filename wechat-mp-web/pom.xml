@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-	    <groupId>com.github.rockeyhoo</groupId>
-	    <artifactId>wechat-mp-pom</artifactId>
-	    <version>1.0.1-SNAPSHOT</version>
+        <groupId>com.github.rockeyhoo</groupId>
+        <artifactId>wechat-mp-pom</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>wechat-mp-web</artifactId>
@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <artifactId>servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -25,6 +25,41 @@
             <groupId>com.github.rockeyhoo</groupId>
             <artifactId>wechat-mp-sdk</artifactId>
         </dependency>
+
+        <!-- =================== spring ================== -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        <!-- Spring End -->
     </dependencies>
 
     <build>

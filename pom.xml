@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.rockeyhoo</groupId>
     <artifactId>wechat-mp-pom</artifactId>
@@ -48,14 +48,16 @@
         <junit.version>4.11</junit.version>
         <slf4j.version>1.7.6</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
+        <logback.classic>1.0.6</logback.classic>
         <common-lang3.version>3.2.1</common-lang3.version>
         <commons-beanutils.version>1.9.1</commons-beanutils.version>
         <commons-io.version>2.4</commons-io.version>
         <guava.version>16.0.1</guava.version>
         <fastjson.version>1.1.39</fastjson.version>
-        <servlet.version>3.1-b07</servlet.version>
+        <servlet.version>2.5</servlet.version>
         <httpcomponents.version>4.3.2</httpcomponents.version>
         <jetty.version>8.1.15.v20140411</jetty.version>
+        <spring.version>3.1.2.RELEASE</spring.version>
     </properties>
 
     <!-- ============================================================== -->
@@ -95,6 +97,12 @@
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.classic}</version>
             </dependency>
             <!-- ===========================log end ================================ -->
 
@@ -143,11 +151,55 @@
             </dependency>
             <!-- =================httpcomponents========================  -->
 
+            <!-- =================spring========================  -->
             <dependency>
                 <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
+                <artifactId>servlet-api</artifactId>
+                <scope>provided</scope>
                 <version>${servlet.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- ========================end spring================================= -->
+
         </dependencies>
     </dependencyManagement>
 
