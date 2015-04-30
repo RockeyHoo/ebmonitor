@@ -1,0 +1,38 @@
+#set($layout = "/layout/default.vm")
+
+<div id="main" style="height: 400px; width: 100%; padding-top: 20px;"></div>
+<div style="width: 100%; text-align: center; height: 30px;">数据来源：上海泉桥资产管理有限公司</div>
+<!-- ECharts单文件引入 -->
+<script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+<script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
+        tooltip: {
+            show: true
+        },
+        legend: {
+            data: ['销量']
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                "name": "销量",
+                "type": "bar",
+                "data": [5, 20, 40, 10, 10, 20]
+            }
+        ]
+    };
+    myChart.setOption(option);
+
+</script>

@@ -6,12 +6,17 @@
     <title>上海泉桥资产管理有限公司</title>
     <meta name="keywords" content="期货,股票,外汇,私募基金,基金,上海泉桥资产管理有限公司"/>
     <meta name="description" content="泉桥资产管理由国内量化金融领域资深专业人士和国际QFII投资共同发起成立."/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href="$!{rc.contextPath}/pages/common/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="$!{rc.contextPath}/pages/common/css/Common.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" language="javascript"
             src="$!{rc.contextPath}/pages/common/js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" language="javascript"
             src="$!{rc.contextPath}/pages/common/js/Common.js"></script>
+    <script type="text/javascript" language="javascript"
+            src="$!{rc.contextPath}/pages/common/js/json.js"></script>
+    <script type="text/javascript" language="javascript"
+            src="$!{rc.contextPath}/pages/common/js/echarts-all.js"></script>
 </head>
 <body>
     $screen_content

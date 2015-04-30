@@ -25,14 +25,15 @@ public class NewsDataProvider extends AbstractDataProvider
     private final static Logger LOGGER = LoggerFactory.getLogger(NewsDataProvider.class);
 
     @Override
-    public String getPageData()
+    public String getPageData(Object obj)
     {
         try
         {
             String html = buildRequest(QqassetEnumFactory.NEWS);
             Document doc = Jsoup.parse(html);
             Elements div = doc.select("div#UpdatePanel2");
-            return div.outerHtml();
+            Elements tables = div.select("table");
+            return tables.get(0).outerHtml().replaceAll("newsdetails.aspx","newsdetails.service");
         }
         catch (Exception e)
         {
@@ -43,7 +44,7 @@ public class NewsDataProvider extends AbstractDataProvider
 
     public static void main(String[] args)
     {
-        NewsDataProvider pr = new  NewsDataProvider();
-        pr.getPageData();
+        NewsDataProvider pr = new NewsDataProvider();
+        pr.getPageData(null);
     }
 }

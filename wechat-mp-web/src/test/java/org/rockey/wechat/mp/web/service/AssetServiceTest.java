@@ -1,6 +1,7 @@
 package org.rockey.wechat.mp.web.service;
 
 import org.rockey.wechat.mp.web.vo.AssetBean;
+import org.rockey.wechat.mp.web.vo.FundBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -19,6 +20,15 @@ public class AssetServiceTest extends AbstractTestNGSpringContextTests
     public void testLoadAssetList() throws Exception
     {
         List<AssetBean> list = assetService.loadAssetList(1);
+        System.out.println("====================");
+        System.out.println(list);
+        System.out.println("====================");
+    }
+
+    @Test
+    public void testLoadFundList() throws Exception
+    {
+        List<FundBean> list = assetService.loadFundList(1);
         System.out.println("====================");
         System.out.println(list);
         System.out.println("====================");

@@ -20,25 +20,31 @@ import org.slf4j.LoggerFactory;
  * Project        : wechat-mp-pom
  * File Name      : AboutDataProvider.java
  */
-public class AboutDataProvider extends AbstractDataProvider
+public class NewsDetailDataProvider extends AbstractDataProvider
 {
-    private final static Logger LOGGER = LoggerFactory.getLogger(AboutDataProvider.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(NewsDetailDataProvider.class);
 
     @Override
-    public String[] getPageData(Object obj)
+    public String getPageData(Object obj)
     {
         try
         {
-            String html = buildRequest(QqassetEnumFactory.ABOUT);
+            String html = buildRequest(QqassetEnumFactory.NEWS);
             Document doc = Jsoup.parse(html);
-            Elements divs = doc.select("body > div:not(.opNav)");
-            Elements dataScript = doc.select("body > script");
-            return new String[]{divs.outerHtml(), dataScript.outerHtml()};
+            Elements div = doc.select("div#UpdatePanel2");
+            Elements tables = div.select("table");
+            return tables.get(0).outerHtml().replaceAll("newsdetails.aspx","newsdetails.service");
         }
         catch (Exception e)
         {
             LOGGER.error("cannot read cat data", e);
         }
-        return new String[]{"", ""};
+        return "";
+    }
+
+    public static void main(String[] args)
+    {
+        NewsDetailDataProvider pr = new NewsDetailDataProvider();
+        pr.getPageData(null);
     }
 }

@@ -14,6 +14,6 @@ package org.rockey.wechat.mp.sdk.qqasset.pagedata;
 public interface PageDataProvider<T>
 {
 
-    public T getPageData();
+    public T getPageData(Object obj);
 
 }
