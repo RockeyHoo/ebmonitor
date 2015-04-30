@@ -42,7 +42,7 @@
         <listener-class>org.rockey.wechat.mp.web.AppInitListener</listener-class>
     </listener>
 
-    <!-- utf8 -->
+    <!-- ====================utf8 filter======================= -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>
@@ -58,12 +58,36 @@
         </init-param>
     </filter>
 
-    <!-- Filter mapping -->
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- ================================ servlet ==================-->
+    <servlet>
+        <servlet-name>AccessServlet</servlet-name>
+        <servlet-class>org.rockey.wechat.mp.web.servlet.AccessServlet</servlet-class>
+    </servlet>
 
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value></param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- servlet mapping-->
+    <servlet-mapping>
+        <servlet-name>AccessServlet</servlet-name>
+        <url-pattern>/mp/access</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.service</url-pattern>
+    </servlet-mapping>
 
 </web-app>

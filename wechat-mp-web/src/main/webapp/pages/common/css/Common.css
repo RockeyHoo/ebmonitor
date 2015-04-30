@@ -1,0 +1,32 @@
+﻿ body, td, th {
+            color: #333;
+        }
+
+        .aa ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .aa li a {
+            display: block;
+            padding-top: 1px;
+            width: 173px;
+            height: 32px;
+            line-height: 32px;
+            background: url(../images/nav_bg.jpg) no-repeat;
+            padding-left: 45px;
+            margin: 0px auto;
+        }
+
+            .aa li a:hover {
+                background: url(../images/nav_bg_A.jpg) no-repeat;
+                color: #ffffff;
+                width: 173px;
+                padding-left: 45px;
+                text-decoration: none;
+            }
+
+        .clear {
+            clear: both;
+        }

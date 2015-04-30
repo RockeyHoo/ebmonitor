@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="$!{rc.contextPath}/pages/common/images/logo.png"/>
+    <title>上海泉桥资产管理有限公司</title>
+    <meta name="keywords" content="期货,股票,外汇,私募基金,基金,上海泉桥资产管理有限公司"/>
+    <meta name="description" content="泉桥资产管理由国内量化金融领域资深专业人士和国际QFII投资共同发起成立."/>
+    <link href="$!{rc.contextPath}/pages/common/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="$!{rc.contextPath}/pages/common/css/Common.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" language="javascript"
+            src="$!{rc.contextPath}/pages/common/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" language="javascript"
+            src="$!{rc.contextPath}/pages/common/js/Common.js"></script>
+</head>
+<body>
+    $screen_content
+</body>
+</html>

@@ -1,13 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation=
-               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd"
+       default-autowire="byName">
 
-
-    <context:property-placeholder location="config/applicationContext.properties"/>
+    <context:property-placeholder location="classpath:config/applicationContext.properties"/>
 
     <context:component-scan base-package="org.rockey.wechat.mp.web"/>
 
+    <mvc:annotation-driven/>
+
+    <bean id="velocityConfigurer"
+          class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath" value="/pages"/>
+        <property name="velocityProperties">
+            <props>
+                <prop key="input.encoding">utf-8</prop>
+                <prop key="output.encoding">utf-8</prop>
+                <prop key="runtime.log">velocity_loger</prop>
+                <prop key="runtime.log.logsystem.class">org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+                </prop>
+                <prop key="runtime.log.error.stacktrace">false</prop>
+                <prop key="runtime.log.warn.stacktrace">false</prop>
+                <prop key="runtime.log.info.stacktrace">false</prop>
+                <prop key="runtime.log.invalid.reference">false</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+        <property name="dateToolAttribute" value="dateTool"/>
+        <property name="suffix" value=".html"/>
+        <property name="contentType" value="text/html;charset=utf-8"/>
+        <property name="allowSessionOverride" value="true"/>
+        <property name="allowRequestOverride" value="true"/>
+        <property name="exposeSessionAttributes" value="true"/>
+        <property name="requestContextAttribute" value="rc"/>
+        <property name="exposeRequestAttributes" value="true"/>
+        <property name="layoutKey" value="layout"/>
+        <property name="screenContentKey" value="screen_content"/>
+        <property name="layoutUrl" value="layout/empty.vm"/>
+    </bean>
+
+     <import resource="applicationContext-dao.xml"/>
 </beans>

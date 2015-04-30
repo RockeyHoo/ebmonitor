@@ -43,7 +43,7 @@ public class AppInitListener implements ServletContextListener
             LOG.warn("//		========`-.____`-.___\\_____/___.-`____.-'========		  //");
             LOG.warn("//				             `=---='                              //");
             LOG.warn("//                         Congratulations                          //");
-            LOG.warn("//            wechat-mp-web  failed to start!!!!!                   //");
+            LOG.warn("//            wechat-mp-web  Success to start!!!!!                  //");
             LOG.warn("//           https://github.com/RockeyHoo/ebmonito                  //");
             LOG.warn("//////////////////////////////////////////////////////////////////////");
 

@@ -11,7 +11,7 @@ import org.rockey.wechat.mp.sdk.vo.token.License;
  * @author RockeyHoo
  */
 public class TextPushParser implements PushParser {
-	private static final License license = new License("test", "wxafc93a29c1e2a59f", "5613787a72659cf3fae3bf1a5152b17b");
+	private static final License license = new License("wechat", "wx25c3d588ab1f527d", "73a322011c24e5fb51e2d5186b82c3d6");
 	
     @Override
     public Reply parse(Push push) {
@@ -23,8 +23,8 @@ public class TextPushParser implements PushParser {
 
         // TODO please custom it.
         //Reply reply = ReplyUtil.parseReplyDetailWarpper(ReplyUtil.getDummyNewsReplyDetailWarpper());回复news消息
-        //Reply reply = ReplyUtil.parseReplyDetailWarpper(ReplyUtil.getDummyTextReplyDetailWarpper());
-        Reply reply = ReplyUtil.parseReplyDetailWarpper(ReplyUtil.getDummyTextReplyDetailWarpper(license, textPush.getToUserName(), textPush.getContent()));
+        Reply reply = ReplyUtil.parseReplyDetailWarpper(ReplyUtil.getDummyTextReplyDetailWarpper());
+        //Reply reply = ReplyUtil.parseReplyDetailWarpper(ReplyUtil.getDummyTextReplyDetailWarpper(license, textPush.getToUserName(), textPush.getContent()));
         return ReplyUtil.buildReply(reply, textPush);
     }
 

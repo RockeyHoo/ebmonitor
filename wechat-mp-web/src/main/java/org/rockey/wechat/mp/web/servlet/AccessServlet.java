@@ -31,14 +31,13 @@ public class AccessServlet extends HttpServlet
 
     private static final Logger log = LoggerFactory.getLogger(AccessServlet.class);
 
-    private static final String TOKEN = "token"; // TODO please custom it.
+    private static final String TOKEN = "Qwer1234"; // TODO please custom it.
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         try
         {
-            System.out.println("begin .........");
             Signature signature = new Signature();
             boolean hasRights = checkSignature(signature, request);
             if (hasRights)
@@ -62,7 +61,6 @@ public class AccessServlet extends HttpServlet
     {
         try
         {
-            System.out.println("...........");
             log.info("========= post begin ===========");
             log.info("--							");
             log.info("========= post begin ===========");

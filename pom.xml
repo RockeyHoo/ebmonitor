@@ -57,7 +57,13 @@
         <servlet.version>2.5</servlet.version>
         <httpcomponents.version>4.3.2</httpcomponents.version>
         <jetty.version>8.1.15.v20140411</jetty.version>
-        <spring.version>3.1.2.RELEASE</spring.version>
+        <spring.version>3.2.4.RELEASE</spring.version>
+        <jsoup.version>1.7.3</jsoup.version>
+        <velocity.version>1.7</velocity.version>
+        <velocity-tools.version>2.0</velocity-tools.version>
+        <dbcp.version>1.4</dbcp.version>
+        <jtds.version>1.2.4</jtds.version>
+        <tsng.version>6.7</tsng.version>
     </properties>
 
     <!-- ============================================================== -->
@@ -104,6 +110,14 @@
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.classic}</version>
             </dependency>
+
+            <!-- TestNG -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${tsng.version}</version>
+                <scope>test</scope>
+            </dependency>
             <!-- ===========================log end ================================ -->
 
             <!-- ===========================common start============================ -->
@@ -149,6 +163,11 @@
                 <artifactId>httpmime</artifactId>
                 <version>${httpcomponents.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
             <!-- =================httpcomponents========================  -->
 
             <!-- =================spring========================  -->
@@ -157,6 +176,11 @@
                 <artifactId>servlet-api</artifactId>
                 <scope>provided</scope>
                 <version>${servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -198,9 +222,47 @@
                 <artifactId>spring-aop</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
             <!-- ========================end spring================================= -->
 
+            <!-- ========================velocity ================================= -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-tools</artifactId>
+                <version>${velocity-tools.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-dbcp</groupId>
+                <artifactId>commons-dbcp</artifactId>
+                <version>${dbcp.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sourceforge.jtds</groupId>
+                <artifactId>jtds</artifactId>
+                <version>${jtds.version}</version>
+            </dependency>
+
         </dependencies>
+
+
     </dependencyManagement>
 
     <!-- ============================================================= -->

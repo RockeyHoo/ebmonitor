@@ -1,7 +1,5 @@
 package org.rockey.wechat.mp.sdk.util;
 
-import java.util.Arrays;
-
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -13,6 +11,8 @@ import org.rockey.wechat.mp.sdk.vo.biz.BizJsonRtn;
 import org.rockey.wechat.mp.sdk.vo.message.reply.Reply;
 import org.rockey.wechat.mp.sdk.vo.push.Push;
 import org.rockey.wechat.mp.sdk.vo.token.License;
+
+import java.util.Arrays;
 
 /**
  *
@@ -67,8 +67,9 @@ public class ReplyUtil {
      */
     public static ReplyDetailWarpper getDummyTextReplyDetailWarpper() {
         ReplyDetail replyDetail = new ReplyDetail();
-        replyDetail.setDescription("欢迎订阅咔咔 \n" +
-                "Welcome subscribe kaka, are you SB?");
+        replyDetail.setDescription("欢迎订阅泉桥资产 \n" +
+                "Welcome subscribe Springs Bridge Asset. \n" +
+                "微信服务正在开发中..... 敬请期待！");
 
         return new ReplyDetailWarpper("text", Arrays.asList(replyDetail));
     }
