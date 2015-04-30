@@ -55,7 +55,7 @@ public class AssetService
                         bean.setfId(rs.getInt("fId"));
                         bean.setFname(rs.getString("fname"));
                         bean.setQqassetname(rs.getString("qqassetname"));
-                        bean.setAsset_balance("asset_balance");
+                        bean.setAsset_balance(rs.getString("asset_balance"));
                         bean.setHs_300(rs.getString("hs_300"));
                         bean.setDates("dates");
                         return bean;
