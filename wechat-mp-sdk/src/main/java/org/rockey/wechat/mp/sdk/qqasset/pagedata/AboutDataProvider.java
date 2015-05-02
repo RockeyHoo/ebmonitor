@@ -29,7 +29,7 @@ public class AboutDataProvider extends AbstractDataProvider
     {
         try
         {
-            String html = buildRequest(QqassetEnumFactory.ABOUT);
+            String html = buildRequest(QqassetEnumFactory.ABOUT, null);
             Document doc = Jsoup.parse(html);
             Elements divs = doc.select("body > div:not(.opNav)");
             Elements dataScript = doc.select("body > script");

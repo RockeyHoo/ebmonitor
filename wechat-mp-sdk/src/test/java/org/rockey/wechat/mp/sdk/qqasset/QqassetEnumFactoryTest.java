@@ -12,7 +12,7 @@ public class QqassetEnumFactoryTest
         QqassetEnumFactory qq = EnumUtils.getEnum(QqassetEnumFactory.class, StringUtils.upperCase("about"));
         Validate.notNull(qq, "don't-support-%s-type-message", "about");
         PageDataProvider provider = qq.getDataProvider();
-        String[] content = (String[]) provider.getPageData();
+        String[] content = (String[]) provider.getPageData(null);
         System.out.println("=========================");
         System.out.println(content);
         System.out.println("=========================");

@@ -233,4 +233,27 @@ public class HttpUtil
             return "";
         }
     }
+
+    public static String getRequest(QqassetEnumFactory request, String param, Map<String, String> paramMap)
+    {
+        String requestUrl = String.format(request.getUrl(), param);
+        String requestName = request.getName();
+        List<NameValuePair> nameValuePairs = buildNameValuePairs(paramMap);
+        URI uri = buildURI(requestUrl, nameValuePairs);
+        if (uri == null)
+        {
+            return "";
+        }
+        try
+        {
+            log.info(requestName + " result:\n url={}", requestUrl);
+            return Request.Get(uri).execute().handleResponse(HttpUtil.UTF8_CONTENT_HANDLER);
+        }
+        catch (Exception e)
+        {
+            String msg = requestName + " failed:\n url=" + uri;
+            log.error(msg, e);
+            return "";
+        }
+    }
 }

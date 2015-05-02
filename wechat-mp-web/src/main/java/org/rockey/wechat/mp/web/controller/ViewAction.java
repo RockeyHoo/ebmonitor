@@ -48,19 +48,19 @@ public class ViewAction
     public String news(ModelMap model)
     {
         QqassetEnumFactory qq = EnumUtils.getEnum(QqassetEnumFactory.class, StringUtils.upperCase("news"));
-        Validate.notNull(qq, "don't-support-%s-type-message", "about");
+        Validate.notNull(qq, "don't-support-%s-type-message", "news");
         PageDataProvider provider = qq.getDataProvider();
-        model.put("news", provider.getPageData());
+        model.put("news", provider.getPageData(null));
         return "asset/news";
     }
 
     @RequestMapping(value = {"/newsdetails.service"}, method = RequestMethod.GET)
     public String newsDetail(@RequestParam("ID") String ID,ModelMap model)
     {
-        QqassetEnumFactory qq = EnumUtils.getEnum(QqassetEnumFactory.class, StringUtils.upperCase("news"));
-        Validate.notNull(qq, "don't-support-%s-type-message", "about");
+        QqassetEnumFactory qq = EnumUtils.getEnum(QqassetEnumFactory.class, StringUtils.upperCase("detail"));
+        Validate.notNull(qq, "don't-support-%s-type-message", "detail");
         PageDataProvider provider = qq.getDataProvider();
-        model.put("news", provider.getPageData());
+        model.put("news", provider.getPageData(ID));
         return "asset/newsdetail";
     }
 

@@ -7,6 +7,7 @@
 
 package org.rockey.wechat.mp.sdk.qqasset.pagedata;
 
+import org.jsoup.helper.StringUtil;
 import org.rockey.wechat.mp.sdk.qqasset.QqassetEnumFactory;
 import org.rockey.wechat.mp.sdk.util.HttpUtil;
 
@@ -18,12 +19,19 @@ import org.rockey.wechat.mp.sdk.util.HttpUtil;
  */
 abstract class AbstractDataProvider implements PageDataProvider
 {
-    public String buildRequest(QqassetEnumFactory request)
+    public String buildRequest(QqassetEnumFactory request, String param)
     {
         String content = null;
         try
         {
-            return HttpUtil.getRequest(request, null);
+            if (StringUtil.isBlank(param))
+            {
+                return HttpUtil.getRequest(request, null);
+            }
+            else
+            {
+                return HttpUtil.getRequest(request, param, null);
+            }
         }
         catch (Exception e)
         {

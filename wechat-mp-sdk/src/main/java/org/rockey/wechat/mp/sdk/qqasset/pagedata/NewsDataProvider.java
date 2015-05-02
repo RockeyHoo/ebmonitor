@@ -29,11 +29,10 @@ public class NewsDataProvider extends AbstractDataProvider
     {
         try
         {
-            String html = buildRequest(QqassetEnumFactory.NEWS);
-            Document doc = Jsoup.parse(html);
+            Document doc = Jsoup.connect(QqassetEnumFactory.NEWS.getUrl()).get();
             Elements div = doc.select("div#UpdatePanel2");
             Elements tables = div.select("table");
-            return tables.get(0).outerHtml().replaceAll("newsdetails.aspx","newsdetails.service");
+            return tables.get(0).outerHtml().replaceAll("newsdetails.aspx", "newsdetails.service");
         }
         catch (Exception e)
         {

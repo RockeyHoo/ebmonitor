@@ -14,6 +14,8 @@ import org.rockey.wechat.mp.sdk.qqasset.QqassetEnumFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+
 /*
  * Create Author  : shuang.he
  * Create Date    : 2015-04-27
@@ -29,11 +31,9 @@ public class NewsDetailDataProvider extends AbstractDataProvider
     {
         try
         {
-            String html = buildRequest(QqassetEnumFactory.NEWS);
-            Document doc = Jsoup.parse(html);
-            Elements div = doc.select("div#UpdatePanel2");
-            Elements tables = div.select("table");
-            return tables.get(0).outerHtml().replaceAll("newsdetails.aspx","newsdetails.service");
+            Document doc = Jsoup.connect(String.format(QqassetEnumFactory.DETAIL.getUrl(),obj)).get();
+            Elements div = doc.select(".4wechat");
+            return div.outerHtml();
         }
         catch (Exception e)
         {
@@ -42,9 +42,10 @@ public class NewsDetailDataProvider extends AbstractDataProvider
         return "";
     }
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
-        NewsDetailDataProvider pr = new NewsDetailDataProvider();
-        pr.getPageData(null);
+       // NewsDetailDataProvider pr = new NewsDetailDataProvider();
+        //pr.getPageData("39");
+
     }
 }
