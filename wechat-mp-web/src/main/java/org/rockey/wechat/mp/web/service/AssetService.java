@@ -185,7 +185,7 @@ public class AssetService
         }
         String privilege = user.getPrivilege();
         List<AssetBean> list = loadProductList(privilege);
-        sb.append("<![CDATA[旗下基金:\n");
+        sb.append("<![CDATA[旗下基金:\n\n");
         int i = 1;
         for (AssetBean assetBean : list)
         {
