@@ -1,28 +1,24 @@
 package org.rockey.wechat.mp.sdk.util.platform;
 
+import org.rockey.wechat.mp.sdk.vo.menu.*;
+import org.rockey.wechat.mp.sdk.vo.token.License;
+
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.rockey.wechat.mp.sdk.vo.menu.MenuType;
-import org.rockey.wechat.mp.sdk.vo.menu.Menu;
-import org.rockey.wechat.mp.sdk.vo.menu.MenuInfo;
-import org.rockey.wechat.mp.sdk.vo.menu.MultiMenuInfo;
-import org.rockey.wechat.mp.sdk.vo.menu.SingleMenuInfo;
-import org.rockey.wechat.mp.sdk.vo.token.License;
 
 /**
  *
  * @author RockeyHoo
  */
 public class MenuUtilTest {
-    private static final License license = new License("test", "wxafc93a29c1e2a59f", "5613787a72659cf3fae3bf1a5152b17b");
+    public static final License license = new License("test", "wx25c3d588ab1f527d", "de3a3cf8f6f632d8304b924ce2b83c89");
 
     public static void main(String[] args) throws URISyntaxException {
         List<SingleMenuInfo> subMenuInfos = new ArrayList<SingleMenuInfo>();
-        subMenuInfos.add(MenuType.VIEW.buildSingleMenuInfo("搜索", "http://www.soso.com/"));
-        subMenuInfos.add(MenuType.VIEW.buildSingleMenuInfo("视频", "http://v.qq.com/"));
-        subMenuInfos.add(MenuType.CLICK.buildSingleMenuInfo("赞一下我们", "V1001_GOOD"));
+        subMenuInfos.add(MenuType.VIEW.buildSingleMenuInfo("走进泉桥", "http://121.42.42.197/wechat/asset/about.service"));
+        subMenuInfos.add(MenuType.CLICK.buildSingleMenuInfo("旗下基金", "fund_click"));
+        subMenuInfos.add(MenuType.VIEW.buildSingleMenuInfo("泉桥视界", "http://121.42.42.197/wechat/asset/news.service"));
 
         List<MenuInfo> menuInfos = new ArrayList<MenuInfo>();
         menuInfos.add(MenuType.CLICK.buildSingleMenuInfo("今日歌曲", "V1001_TODAY_MUSIC"));

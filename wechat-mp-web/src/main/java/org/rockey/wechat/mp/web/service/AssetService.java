@@ -8,11 +8,14 @@
 package org.rockey.wechat.mp.web.service;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.rockey.wechat.mp.sdk.util.platform.UserUtil;
+import org.rockey.wechat.mp.sdk.vo.user.UserInfoJsonRtn;
 import org.rockey.wechat.mp.web.dao.JdbcDao;
 import org.rockey.wechat.mp.web.util.CommonUtil;
 import org.rockey.wechat.mp.web.util.Constants;
 import org.rockey.wechat.mp.web.vo.AssetBean;
 import org.rockey.wechat.mp.web.vo.FundBean;
+import org.rockey.wechat.mp.web.vo.WechatUserBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.RowMapper;
@@ -59,6 +62,48 @@ public class AssetService
                 }
         );
         return !CollectionUtils.isEmpty(assetlist) ? assetlist : null;
+    }
+
+    public List<AssetBean> loadProductList(String ids)
+    {
+        String sql = String.format(Constants.QUERY_PRODUCT, ids);
+        List<AssetBean> assetlist = this.jdbcDao.getJdbcTemplate().query(sql,
+                new RowMapper<AssetBean>()
+                {
+                    @Override
+                    public AssetBean mapRow(ResultSet rs, int rowNum) throws SQLException
+                    {
+                        AssetBean bean = new AssetBean();
+                        bean.setfId(rs.getInt("fId"));
+                        bean.setFname(rs.getString("fname"));
+                        return bean;
+                    }
+                }
+        );
+        return !CollectionUtils.isEmpty(assetlist) ? assetlist : null;
+    }
+
+    public WechatUserBean loadWechatUser(String openid)
+    {
+        List<WechatUserBean> assetlist = this.jdbcDao.getJdbcTemplate().query(Constants.LODD_USER,
+                new Object[]{openid},
+                new RowMapper<WechatUserBean>()
+                {
+                    @Override
+                    public WechatUserBean mapRow(ResultSet rs, int rowNum) throws SQLException
+                    {
+                        WechatUserBean bean = new WechatUserBean();
+                        bean.setPrivilege(rs.getString("privilege"));
+                        return bean;
+                    }
+                }
+        );
+        return !CollectionUtils.isEmpty(assetlist) ? assetlist.get(0) : null;
+    }
+
+    public boolean save(WechatUserBean bean)
+    {
+        return jdbcDao.getJdbcTemplate().update(Constants.INSERT_USER, new Object[]{bean.getOpenid(), bean.getNickname(), bean.getSex(), bean.getCity(), bean.getCountry(), bean.getProvince(), bean.getLanguage(), bean.getHeadimgurl(), bean.getUnionid(), bean.getSubscribe_time(), bean.getPrivilege()}) > 0;
     }
 
     public List<FundBean> loadFundList(int accountId)
@@ -111,4 +156,41 @@ public class AssetService
             model.put("name", name);
         }
     }
+
+    public void conver2WechatUser(UserInfoJsonRtn user, WechatUserBean bean)
+    {
+        bean.setOpenid(user.getOpenId());
+        bean.setNickname(user.getNickName());
+        bean.setSex(String.valueOf(user.getSex()));
+        bean.setCity(user.getCity());
+        bean.setCountry(user.getCountry());
+        bean.setProvince(user.getProvince());
+        bean.setLanguage(user.getLanguage());
+        bean.setHeadimgurl(user.getHeadImgUrl());
+        bean.setSubscribe_time(String.valueOf(user.getSubscribeTime()));
+        bean.setPrivilege("3,4");
+        bean.setUnionid("0");
+    }
+
+    public String processMessage(String openid)
+    {
+        StringBuffer sb = new StringBuffer();
+        WechatUserBean user = loadWechatUser(openid);
+        if (user == null)
+        {
+            user = new WechatUserBean();
+            UserInfoJsonRtn userInfo = UserUtil.getUserInfo(Constants.license, openid);
+            conver2WechatUser(userInfo, user);
+            save(user);
+        }
+        String privilege = user.getPrivilege();
+        List<AssetBean> list = loadProductList(privilege);
+        sb.append("旗下基金:\n");
+        for (AssetBean assetBean : list)
+        {
+            sb.append(" <a href='http://121.42.42.197/wechat/asset/fund.service?fId=").append(assetBean.getfId()).append("'>").append(assetBean.getFname()).append("</a> \n");
+        }
+        return sb.toString();
+    }
+
 }

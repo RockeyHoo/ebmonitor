@@ -74,6 +74,13 @@ public class ReplyUtil {
         return new ReplyDetailWarpper("text", Arrays.asList(replyDetail));
     }
 
+    public static ReplyDetailWarpper getClickTextReplyDetailWarpper() {
+        ReplyDetail replyDetail = new ReplyDetail();
+        replyDetail.setDescription("REPLACEMENT");
+
+        return new ReplyDetailWarpper("text", Arrays.asList(replyDetail));
+    }
+
     public static ReplyDetailWarpper getDummyTextReplyDetailWarpper(License license,String openId,String message) {
         ReplyDetail replyDetail = new ReplyDetail();
         BizJsonRtn reply = BizUtil.getBizInfo(license, openId, message);

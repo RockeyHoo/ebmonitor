@@ -11,10 +11,14 @@ import org.rockey.wechat.mp.sdk.util.XmlUtil;
 import org.rockey.wechat.mp.sdk.vo.Signature;
 import org.rockey.wechat.mp.sdk.vo.message.reply.Reply;
 import org.rockey.wechat.mp.sdk.vo.push.Push;
+import org.rockey.wechat.mp.web.service.AssetService;
 import org.rockey.wechat.mp.web.util.WebUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +36,10 @@ public class AccessServlet extends HttpServlet
     private static final Logger log = LoggerFactory.getLogger(AccessServlet.class);
 
     private static final String TOKEN = "Qwer1234"; // TODO please custom it.
+
+    protected WebApplicationContext applicationContext;
+
+    private AssetService assetService;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -83,6 +91,8 @@ public class AccessServlet extends HttpServlet
             String replyXml = XmlUtil.marshal(reply);
             if (StringUtils.isNotEmpty(replyXml))
             {
+                String content = assetService.processMessage(push.getFromUserName());
+                replyXml = StringUtils.replace(replyXml, "REPLACEMENT", content);
                 log.info("回复推送消息====> reply-xml:{},{}", sessionid, replyXml);
                 WebUtil.outputString(response, replyXml);
             }
@@ -104,6 +114,7 @@ public class AccessServlet extends HttpServlet
     {
         BeanUtils.populate(signature, request.getParameterMap());
         signature.setToken(TOKEN);
+        log.warn(request.getParameterMap() + ", signature" + signature);
         String sign = Hashing.sha1().hashString(buildSignatureText(signature), Charsets.UTF_8).toString();
         return sign.equalsIgnoreCase(signature.getSignature());
     }
@@ -121,5 +132,12 @@ public class AccessServlet extends HttpServlet
     private String getMsgType(String message)
     {
         return StringUtils.substringBetween(message, "<MsgType><![CDATA[", "]]></MsgType>");
+    }
+
+    public void init(ServletConfig config) throws ServletException
+    {
+        super.init(config);
+        applicationContext = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+        this.assetService = this.applicationContext.getBean(AssetService.class);
     }
 }
