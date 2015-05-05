@@ -185,11 +185,12 @@ public class AssetService
         }
         String privilege = user.getPrivilege();
         List<AssetBean> list = loadProductList(privilege);
-        sb.append("旗下基金:\n");
+        sb.append("<![CDATA[旗下基金:\n");
         for (AssetBean assetBean : list)
         {
             sb.append(" <a href='http://121.42.42.197/wechat/asset/fund.service?fId=").append(assetBean.getfId()).append("'>").append(assetBean.getFname()).append("</a> \n");
         }
+        sb.append("]]>");
         return sb.toString();
     }
 

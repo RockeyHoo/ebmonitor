@@ -67,9 +67,7 @@ public class ReplyUtil {
      */
     public static ReplyDetailWarpper getDummyTextReplyDetailWarpper() {
         ReplyDetail replyDetail = new ReplyDetail();
-        replyDetail.setDescription("欢迎订阅泉桥资产 \n" +
-                "Welcome subscribe Springs Bridge Asset. \n" +
-                "微信服务正在开发中..... 敬请期待！");
+        replyDetail.setDescription("欢迎订阅泉桥资产");
 
         return new ReplyDetailWarpper("text", Arrays.asList(replyDetail));
     }

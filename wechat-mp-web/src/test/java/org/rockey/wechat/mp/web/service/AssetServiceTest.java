@@ -2,11 +2,9 @@ package org.rockey.wechat.mp.web.service;
 
 import org.rockey.wechat.mp.sdk.util.platform.UserUtil;
 import org.rockey.wechat.mp.sdk.vo.token.License;
-import org.rockey.wechat.mp.sdk.vo.user.UserInfoJsonRtn;
 import org.rockey.wechat.mp.sdk.vo.user.UsersJsonRtn;
 import org.rockey.wechat.mp.web.vo.AssetBean;
 import org.rockey.wechat.mp.web.vo.FundBean;
-import org.rockey.wechat.mp.web.vo.WechatUserBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -46,14 +44,14 @@ public class AssetServiceTest extends AbstractTestNGSpringContextTests
     {
         UsersJsonRtn users = UserUtil.getUsers(license2);
         List<String> list = users.getOpenIds().getOpenIds();
-        for (String openId : list)
+       /* for (String openId : list)
         {
             WechatUserBean bean = new WechatUserBean();
             UserInfoJsonRtn userInfo = UserUtil.getUserInfo(license2, openId);
             assetService.conver2WechatUser(userInfo, bean);
             boolean succ = assetService.save(bean);
             System.out.println(succ);
-        }
+        }*/
     }
 
     @Test
