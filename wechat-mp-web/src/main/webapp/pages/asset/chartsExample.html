@@ -1,11 +1,15 @@
-#set($layout = "/layout/default.vm")
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+</head>
+<body>
 <div id="main" style="height: 400px; width: 100%; padding-top: 20px;"></div>
-<div style="width: 100%; text-align: center; height: 30px;">数据来源：上海泉桥资产管理有限公司</div>
-<!-- ECharts单文件引入 -->
-<script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
-<script type="text/javascript">
 
+<!-- ECharts单文件引入 -->
+<script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     var option = {
         tooltip: {
@@ -13,6 +17,16 @@
         },
         legend: {
             data: ['销量']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
         },
         xAxis: [
             {
@@ -35,4 +49,12 @@
     };
     myChart.setOption(option);
 
+</script>
+<div id="abc" style=" width: 100%;">
+</div>
+</body>
+</html>
+<script type="text/javascript" language="JavaScript">
+    var pngContent = encodeURIComponent(myChart.getDataURL("png"));
+    document.getElementById("abc").innerHTML = pngContent;
 </script>

@@ -1,6 +1,6 @@
 #set($layout = "/layout/default.vm")
 
-<div id="main" style="height: 400px; width: 100%; padding-top: 20;"></div>
+<div id="main" style="height: 400px; width: 100%; padding-top: 20px;"></div>
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     var option = {
@@ -25,16 +25,16 @@
                 dataView: {show: false, readOnly: true},
                 magicType: {show: false, type: ['line', 'bar', 'stack', 'tiled']},
                 restore: {show: false},
-                saveAsImage: {show: false}
+                saveAsImage: {show: true}
             }
         },
         calculable: false,
         grid: {
             borderWidth: 0,
-            x:50,
-            y:40,
-            x2:10,
-            y2:60
+            x: 50,
+            y: 40,
+            x2: 10,
+            y2: 60
         },
         dataZoom: {
             show: true,
@@ -115,6 +115,7 @@
             jQuery(this).removeClass("alt");
         });
     });
+
 </script>
 
 <div style="width: 100%; text-align: center; height: 30px;">数据来源：上海泉桥资产管理有限公司</div>
@@ -129,10 +130,10 @@
             <td nowrap='nowrap' align="center" valign="middle"><strong>日期</strong></td>
             <td nowrap='nowrap' align="center" valign="middle"><strong>持仓股数</strong></td>
             <td nowrap='nowrap' align="center" valign="middle"><strong>可用数量</strong></td>
-            <td nowrap='nowrap' align="center" valign="middle"><strong>成本价</strong></td>
+            <!--<td nowrap='nowrap' align="center" valign="middle"><strong>成本价</strong></td>
             <td nowrap='nowrap' align="center" valign="middle"><strong>最新价</strong></td>
             <td nowrap='nowrap' align="center" valign="middle"><strong>市值</strong></td>
-            <td nowrap='nowrap' align="center" valign="middle"><strong>买卖盈亏</strong></td>
+            <td nowrap='nowrap' align="center" valign="middle"><strong>买卖盈亏</strong></td>-->
         </tr>
         #set($i=0)
         #foreach($item in $funds)
@@ -143,18 +144,31 @@
         #set($commoncolor='tabletr1')
         #end
         <tr class="$!{commoncolor}">
-            <td  height='25' align='center' valign='middle'>$i</td>
-            <td  height='25' align='center' valign='middle'>$!{item.stock_code}</td>
-            <td  height='25' align='center' valign='middle'>$!{item.stock_name}</td>
-            <td  nowrap='nowrap' height='25' align='center' valign='middle'>$!{item.init_dateString}</td>
-            <td  height='25' align='center' valign='middle'>$!{item.current_amount}</td>
-            <td  height='25' align='center' valign='middle'>$!{item.enable_amount}</td>
-            <td  height='25' align='center' valign='middle'>$!{item.cost_price}</td>
+            <td height='25' align='center' valign='middle'>$i</td>
+            <td height='25' align='center' valign='middle'>$!{item.stock_code}</td>
+            <td height='25' align='center' valign='middle'>$!{item.stock_name}</td>
+            <td nowrap='nowrap' height='25' align='center' valign='middle'>$!{item.init_dateString}</td>
+            <td height='25' align='center' valign='middle'>$!{item.current_amount}</td>
+            <td height='25' align='center' valign='middle'>$!{item.enable_amount}</td>
+            <!--<td  height='25' align='center' valign='middle'>$!{item.cost_price}</td>
             <td  height='25' align='center' valign='middle'>$!{item.last_price}</td>
             <td  height='25' align='center' valign='middle'>$!{item.market_value}</td>
-            <td  height='25' align='center' valign='middle'>$!{item.income_balance}</td>
+            <td  height='25' align='center' valign='middle'>$!{item.income_balance}</td>-->
         </tr>
         #set($i=$i+1)
         #end
     </table>
 </div>
+
+<div id="pngContent" style="width: 100%; overflow: scroll;">
+
+</div>
+
+<script type="text/javascript" language="JavaScript">
+    var pngContent = encodeURIComponent(myChart.getDataURL("png"));
+    try {
+        jQuery("#pngContent").html(pngContent);
+    } catch (e) {
+
+    }
+</script>
