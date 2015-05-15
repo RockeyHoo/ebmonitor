@@ -47,4 +47,5 @@
     </bean>
 
      <import resource="applicationContext-dao.xml"/>
+     <import resource="schedule-context.xml"/>
 </beans>

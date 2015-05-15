@@ -22,7 +22,15 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import sun.misc.BASE64Decoder;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /*
@@ -55,7 +63,7 @@ public class ViewAction
     }
 
     @RequestMapping(value = {"/newsdetails.service"}, method = RequestMethod.GET)
-    public String newsDetail(@RequestParam("ID") String ID,ModelMap model)
+    public String newsDetail(@RequestParam("ID") String ID, ModelMap model)
     {
         QqassetEnumFactory qq = EnumUtils.getEnum(QqassetEnumFactory.class, StringUtils.upperCase("detail"));
         Validate.notNull(qq, "don't-support-%s-type-message", "detail");
@@ -65,13 +73,49 @@ public class ViewAction
     }
 
     @RequestMapping(value = {"/fund.service"}, method = RequestMethod.GET)
-    public String fund(@RequestParam("fId") String fId, ModelMap model)
+    public String fund(@RequestParam(required = false, defaultValue = "1", value = "fId") String fId, ModelMap model)
     {
         List<AssetBean> list = assetService.loadAssetList(NumberUtils.toInt(fId, 1));
         List<FundBean> funds = assetService.loadFundList(NumberUtils.toInt(fId, 1));
         assetService.conver2ChartsData(list, model);
         model.put("funds", funds);
         return "asset/fund";
+    }
+
+    @RequestMapping(value = {"/showPng.service"}, method = RequestMethod.GET)
+    public String showPng(@RequestParam(required = false, defaultValue = "1", value = "fId") String fId, ModelMap model)
+    {
+        List<AssetBean> list = assetService.loadAssetList(NumberUtils.toInt(fId, 1));
+        List<FundBean> funds = assetService.loadFundList(NumberUtils.toInt(fId, 1));
+        assetService.conver2ChartsData(list, model);
+        model.put("funds", funds);
+        return "asset/show";
+    }
+
+    @RequestMapping(value = {"/savePng.service"}, method = RequestMethod.POST)
+    public void fund(HttpServletRequest req)
+    {
+        String content = req.getParameter("pngContent");
+        String data = URLDecoder.decode(content);
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");//设置日期格式
+        String path = req.getSession().getServletContext().getRealPath("/");
+        try
+        {
+            String[] url = data.split(",");
+            String u = url[1];
+            // Base64解码
+            byte[] b = new BASE64Decoder().decodeBuffer(u);
+            // 生成图片
+            OutputStream out = new FileOutputStream(new File(path + "fundPng/" + df.format(new Date()) + ".png"));
+            out.write(b);
+            out.flush();
+            out.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        System.out.println("read ok");
     }
 
 }

@@ -1,6 +1,19 @@
-#set($layout = "/layout/default.vm")
-
-<div id="main" style="height: 400px; width: 100%; padding-top: 20;"></div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="$!{rc.contextPath}/pages/common/images/logo.png"/>
+    <title>上海泉桥资产管理有限公司</title>
+    <meta name="keywords" content="期货,股票,外汇,私募基金,基金,上海泉桥资产管理有限公司"/>
+    <meta name="description" content="泉桥资产管理由国内量化金融领域资深专业人士和国际QFII投资共同发起成立."/>
+    <script type="text/javascript" language="javascript"
+            src="$!{rc.contextPath}/pages/common/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" language="javascript"
+            src="$!{rc.contextPath}/pages/common/js/echarts-all.js"></script>
+</head>
+<body>
+<div id="main" style="height: 400px; width: 100%; padding-top: 20px;"></div>
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     var option = {
@@ -9,6 +22,7 @@
             text: "$!{name}",
             x: "center" //标题水平方向位置
         },
+        animation: false,
         tooltip: {
             trigger: 'axis'
         },
@@ -25,16 +39,16 @@
                 dataView: {show: false, readOnly: true},
                 magicType: {show: false, type: ['line', 'bar', 'stack', 'tiled']},
                 restore: {show: false},
-                saveAsImage: {show: true}
+                saveAsImage: {show: false}
             }
         },
         calculable: false,
         grid: {
             borderWidth: 0,
-            x:50,
-            y:40,
-            x2:10,
-            y2:60
+            x: 50,
+            y: 40,
+            x2: 10,
+            y2: 60
         },
         dataZoom: {
             show: true,
@@ -107,22 +121,29 @@
     };
     myChart.setOption(option);
 
-    function exportImage(){
-        var data = "a=" + myChart.getDataURL("png");
-        var xmlhttp;
-        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else { // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.open("POST","<%=path%>/echarts/ExportsAction/saveImage",true);
-        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                alert(xmlhttp.responseText);
+    var pngContent = encodeURIComponent(myChart.getDataURL("png"));
+
+    function exportImage() {
+        $.ajax({
+            url: '/asset/savePng.service',
+            data: {
+                pngContent: pngContent
+            },
+            type: 'POST',
+            dataType: 'text',
+            success: function (res) {
+                window.close();
+            },
+            error: function () {
+                window.close();
             }
-        }
-        xmlhttp.send(data);
+        });
+
     }
-    setTimeout('exportImage()', 2000);
+
+
+    setTimeout(exportImage, 2000);
+
 </script>
+</body>
+</html>

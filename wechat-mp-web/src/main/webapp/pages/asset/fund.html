@@ -25,7 +25,7 @@
                 dataView: {show: false, readOnly: true},
                 magicType: {show: false, type: ['line', 'bar', 'stack', 'tiled']},
                 restore: {show: false},
-                saveAsImage: {show: true}
+                saveAsImage: {show: false}
             }
         },
         calculable: false,
@@ -115,7 +115,6 @@
             jQuery(this).removeClass("alt");
         });
     });
-
 </script>
 
 <div style="width: 100%; text-align: center; height: 30px;">数据来源：上海泉桥资产管理有限公司</div>
@@ -159,16 +158,3 @@
         #end
     </table>
 </div>
-
-<div id="pngContent" style="width: 100%; overflow: scroll;">
-
-</div>
-
-<script type="text/javascript" language="JavaScript">
-    var pngContent = encodeURIComponent(myChart.getDataURL("png"));
-    try {
-        jQuery("#pngContent").html(pngContent);
-    } catch (e) {
-
-    }
-</script>

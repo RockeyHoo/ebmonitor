@@ -48,13 +48,15 @@
         ]
     };
     myChart.setOption(option);
-
+    var pngContent = encodeURIComponent(myChart.getDataURL("png"));
 </script>
 <div id="abc" style=" width: 100%;">
 </div>
+<input type="hidden" id="dd" value=""/>
 </body>
 </html>
 <script type="text/javascript" language="JavaScript">
-    var pngContent = encodeURIComponent(myChart.getDataURL("png"));
     document.getElementById("abc").innerHTML = pngContent;
+    document.getElementById("dd").value= pngContent;
+    window.close();
 </script>
