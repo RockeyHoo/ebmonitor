@@ -8,7 +8,7 @@ public enum QqassetEnumFactory
     ABOUT("http://www.qqasset.com/about.aspx", new AboutDataProvider()),
     NEWS("http://www.qqasset.com/news.aspx?type=12&nav=3", new NewsDataProvider()),
     DETAIL("http://www.qqasset.com/newsdetails.aspx?ID=%s&nav=3", new NewsDetailDataProvider()),
-    PNG("http://localhost:8080/asset/showPng.service", new PNGDataProvider2());
+    PNG("http://121.42.42.197/wechat/asset/showPng.service", new PNGDataProvider2());
 
     private String url;
 
