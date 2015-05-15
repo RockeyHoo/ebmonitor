@@ -132,10 +132,12 @@
             type: 'POST',
             dataType: 'text',
             success: function (res) {
-                window.close();
+                window.opener = null;//为了不出现提示框
+                window.close();//关闭窗口
             },
             error: function () {
-                window.close();
+                window.opener = null;//为了不出现提示框
+                window.close();//关闭窗口
             }
         });
 

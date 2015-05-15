@@ -37,5 +37,7 @@ public class Constants
 
     public static final String INSERT_USER = "insert into wechat_users(openid,nickname,sex,city,country,province,language,headimgurl,unionid,subscribe_time,privilege) values (?,?,?,?,?,?,?,?,?,?,?)";
 
+    public static final String INSERT_MEDIA = "insert into wechat_medias(date,type,media_id,created_at,path) values (?,?,?,?,?)";
+
     public static final License license = new License("test", "wx25c3d588ab1f527d", "de3a3cf8f6f632d8304b924ce2b83c89");
 }

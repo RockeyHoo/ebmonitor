@@ -59,4 +59,14 @@ public class MediaJsonRtn extends JsonRtn
         this.createdAt = createdAt;
     }
 
+    @Override
+    public String toString()
+    {
+        return "MediaJsonRtn{" +
+                "type='" + type + '\'' +
+                ", mediaId='" + mediaId + '\'' +
+                ", thumbMediaId='" + thumbMediaId + '\'' +
+                ", createdAt=" + createdAt +
+                '}';
+    }
 }

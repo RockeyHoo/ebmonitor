@@ -15,6 +15,7 @@ import org.rockey.wechat.mp.web.util.CommonUtil;
 import org.rockey.wechat.mp.web.util.Constants;
 import org.rockey.wechat.mp.web.vo.AssetBean;
 import org.rockey.wechat.mp.web.vo.FundBean;
+import org.rockey.wechat.mp.web.vo.WechatMediasBean;
 import org.rockey.wechat.mp.web.vo.WechatUserBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -104,6 +105,11 @@ public class AssetService
     public boolean save(WechatUserBean bean)
     {
         return jdbcDao.getJdbcTemplate().update(Constants.INSERT_USER, new Object[]{bean.getOpenid(), bean.getNickname(), bean.getSex(), bean.getCity(), bean.getCountry(), bean.getProvince(), bean.getLanguage(), bean.getHeadimgurl(), bean.getUnionid(), bean.getSubscribe_time(), bean.getPrivilege()}) > 0;
+    }
+
+    public boolean save(WechatMediasBean bean)
+    {
+        return jdbcDao.getJdbcTemplate().update(Constants.INSERT_MEDIA, new Object[]{bean.getDate(), bean.getType(), bean.getMedia_id(), bean.getCreated_at(), bean.getPath()}) > 0;
     }
 
     public List<FundBean> loadFundList(int accountId)

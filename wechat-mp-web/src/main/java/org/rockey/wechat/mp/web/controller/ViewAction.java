@@ -16,6 +16,8 @@ import org.rockey.wechat.mp.sdk.qqasset.pagedata.PageDataProvider;
 import org.rockey.wechat.mp.web.service.AssetService;
 import org.rockey.wechat.mp.web.vo.AssetBean;
 import org.rockey.wechat.mp.web.vo.FundBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -43,6 +45,8 @@ import java.util.List;
 @RequestMapping(value = {"/asset"})
 public class ViewAction
 {
+    private static final Logger log = LoggerFactory.getLogger(ViewAction.class);
+
     @Autowired
     private AssetService assetService;
 
@@ -98,24 +102,24 @@ public class ViewAction
         String content = req.getParameter("pngContent");
         String data = URLDecoder.decode(content);
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");//设置日期格式
-        String path = req.getSession().getServletContext().getRealPath("/");
         try
         {
+            log.warn("savePng begin....");
             String[] url = data.split(",");
             String u = url[1];
             // Base64解码
             byte[] b = new BASE64Decoder().decodeBuffer(u);
             // 生成图片
-            OutputStream out = new FileOutputStream(new File(path + "fundPng/" + df.format(new Date()) + ".png"));
+            OutputStream out = new FileOutputStream(new File("C:/apache/wechatPng/" + df.format(new Date()) + ".png"));
             out.write(b);
             out.flush();
             out.close();
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            log.warn("savePng error ::: {}", e.getMessage());
         }
-        System.out.println("read ok");
+        System.out.println("savePng ok");
     }
 
 }
