@@ -8,7 +8,7 @@
          http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd"
        default-autowire="byName">
 
-    <context:property-placeholder location="classpath:config/applicationContext.properties"/>
+    <context:property-placeholder location="classpath:config/applicationContext.properties" ignore-unresolvable="true"/>
 
     <context:component-scan base-package="org.rockey.wechat.mp.web"/>
 

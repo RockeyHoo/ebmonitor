@@ -125,24 +125,23 @@
 
     function exportImage() {
         $.ajax({
-            url: '/asset/savePng.service',
+            url: '/wechat/asset/savePng.service',
             data: {
                 pngContent: pngContent
             },
             type: 'POST',
             dataType: 'text',
             success: function (res) {
-                window.opener = null;//为了不出现提示框
-                window.close();//关闭窗口
+                window.open('','_top');
+                window.top.close();
             },
             error: function () {
-                window.opener = null;//为了不出现提示框
-                window.close();//关闭窗口
+                window.open('','_top');
+                window.top.close();
             }
         });
 
     }
-
 
     setTimeout(exportImage, 2000);
 

@@ -16,6 +16,7 @@ public enum WechatRequest {
     UPLOAD_MEDIA("http://file.api.weixin.qq.com/cgi-bin/media/upload"),
     GET_MEDIA("http://file.api.weixin.qq.com/cgi-bin/media/get"),
     UPLOAD_NEWS_MEDIA("https://api.weixin.qq.com/cgi-bin/media/uploadnews"),
+    BATCH_GET_MEDIA("https://api.weixin.qq.com/cgi-bin/material/batchget_material"),
 
     CREATE_MENU("https://api.weixin.qq.com/cgi-bin/menu/create"),
     GET_MENU("https://api.weixin.qq.com/cgi-bin/menu/get"),

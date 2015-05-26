@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-@ContextConfiguration(locations = {"classpath:/config/applicationContext-core.xml"})
+@ContextConfiguration(locations = {"classpath:/config/spring/local/applicationContext-core.xml"})
 public class AssetServiceTest extends AbstractTestNGSpringContextTests
 {
 

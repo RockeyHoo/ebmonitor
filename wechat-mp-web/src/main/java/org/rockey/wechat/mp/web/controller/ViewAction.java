@@ -19,6 +19,7 @@ import org.rockey.wechat.mp.web.vo.FundBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +47,9 @@ import java.util.List;
 public class ViewAction
 {
     private static final Logger log = LoggerFactory.getLogger(ViewAction.class);
+
+    @Value("${pngPath}")
+    private String pngPath;
 
     @Autowired
     private AssetService assetService;
@@ -97,20 +101,21 @@ public class ViewAction
     }
 
     @RequestMapping(value = {"/savePng.service"}, method = RequestMethod.POST)
-    public void fund(HttpServletRequest req)
+    public void savePng(HttpServletRequest req)
     {
         String content = req.getParameter("pngContent");
         String data = URLDecoder.decode(content);
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");//设置日期格式
         try
         {
+            System.out.println("save png begin ");
             log.warn("savePng begin....");
             String[] url = data.split(",");
             String u = url[1];
             // Base64解码
             byte[] b = new BASE64Decoder().decodeBuffer(u);
             // 生成图片
-            OutputStream out = new FileOutputStream(new File("C:/apache/wechatPng/" + df.format(new Date()) + ".png"));
+            OutputStream out = new FileOutputStream(new File(pngPath + df.format(new Date()) + ".png"));
             out.write(b);
             out.flush();
             out.close();
@@ -118,6 +123,7 @@ public class ViewAction
         catch (Exception e)
         {
             log.warn("savePng error ::: {}", e.getMessage());
+            e.printStackTrace();
         }
         System.out.println("savePng ok");
     }
